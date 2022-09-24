@@ -13,12 +13,18 @@ contract Ballot {
     }
 
     // adding a state variable for start time
-    uint startTime=block.timestamp;
+    uint public startTime=block.timestamp;
+    uint public deadline=startTime+5 minutes;
+    
 
     //modifier for checking if voting period is over
     modifier voteEnded(){
         require(block.timestamp<startTime+ 5 minutes);
         _;
+    }
+
+    function currentTime()external view returns(uint){
+        return (block.timestamp);
     }
 
     // This is a type for a single proposal.
