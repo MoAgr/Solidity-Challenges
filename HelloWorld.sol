@@ -2,12 +2,12 @@
 pragma solidity ^0.8;
 
 contract HelloWorld{
-    uint num;
+    uint num; //storing number on blockchain (state variable)
 
-    function storeNumber(uint _num)public{
-        num=_num;
+    function storeNumber(uint _num)public{ 
+        num=_num; //equating state variable with argument received
     }
     function retrieveNumber()public view returns(uint){
-        return num;
+        return num; //returning the stored number
     }
 }
